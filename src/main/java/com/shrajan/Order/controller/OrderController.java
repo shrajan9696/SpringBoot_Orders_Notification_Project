@@ -6,6 +6,7 @@ import com.shrajan.Order.Service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -65,6 +66,16 @@ public class OrderController {
                     responseMap.put("isNotificationReceived", false);
                     return Mono.just(ResponseEntity.ok(responseMap));
                 });
+    }
+
+    @GetMapping("/getAllOrders")
+    public ResponseEntity<Object> getAllOrders() {
+        try{
+            return ResponseEntity.ok(orderService.getAllOrders());
+        }
+        catch (Exception e){
+            return ResponseEntity.badRequest().body("No orders found");
+        }
     }
 
 }

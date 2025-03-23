@@ -19,4 +19,8 @@ public class OrderService {
             return null;
         }
     }
+
+    public Object getAllOrders() {
+        return repo.findAll();
+    }
 }
