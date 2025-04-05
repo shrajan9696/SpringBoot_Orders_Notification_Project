@@ -1,12 +1,9 @@
-package com.shrajan.Order.Entity;
+package com.shrajan.order.entity;
 
 public class Notification {
     private int notificationId;
     private String notificationMessage;
     private int orderId;
-
-    public Notification() {
-    }
 
     public int getNotificationId() {
         return notificationId;

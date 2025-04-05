@@ -1,9 +1,7 @@
-package com.shrajan.Order.controller;
-
-import com.shrajan.Order.Entity.Notification;
-import com.shrajan.Order.Entity.Order;
-import com.shrajan.Order.Service.OrderService;
-import org.springframework.beans.factory.annotation.Autowired;
+package com.shrajan.order.controller;
+import com.shrajan.order.entity.Notification;
+import com.shrajan.order.entity.Order;
+import com.shrajan.order.service.OrderService;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,24 +13,24 @@ import reactor.core.publisher.Mono;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Logger;
 
 @RestController
 public class OrderController {
 
     private final WebClient.Builder webClientBuilder;
+    private final OrderService orderService;
+    Logger logger = Logger.getLogger(getClass().getName());
 
-    public OrderController(WebClient.Builder webClientBuilder) {
+    public OrderController(WebClient.Builder webClientBuilder, OrderService orderService) {
         this.webClientBuilder = webClientBuilder;
+        this.orderService = orderService;
     }
 
-    @Autowired
-    private OrderService orderService;
 
     @PostMapping("/createOrder")
     public Mono<ResponseEntity<Map<String, Object>>> createOrder(@RequestBody Order order) {
-        System.out.println(order);
-        System.out.println(order.getOrderName());
-
+        logger.info("create order method started");
         Order createdOrder = orderService.createOrder(order);
 
         if (createdOrder == null) {

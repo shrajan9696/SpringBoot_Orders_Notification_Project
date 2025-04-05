@@ -1,7 +1,7 @@
-package com.shrajan.Order.Service;
+package com.shrajan.order.service;
 
-import com.shrajan.Order.Entity.Order;
-import com.shrajan.Order.Repository.OrderRepository;
+import com.shrajan.order.entity.Order;
+import com.shrajan.order.repository.OrderRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-public class OrderServiceTest {
+ class OrderServiceTest {
 
     @InjectMocks
     OrderService orderService;
@@ -25,7 +25,7 @@ public class OrderServiceTest {
     OrderRepository orderRepository;
 
     @Test
-    public void testGetAllOrders() {
+     void testGetAllOrders() {
         Order order = new Order();
         order.setOrderId(1);
         order.setOrderName("Mobile");
@@ -37,7 +37,7 @@ public class OrderServiceTest {
     }
 
     @Test
-    public void testCreateOrder() {
+     void testCreateOrder() {
         Order order = new Order();
         order.setOrderId(1);
         order.setOrderName("Mobile");

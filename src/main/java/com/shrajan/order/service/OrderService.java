@@ -1,10 +1,9 @@
-package com.shrajan.Order.Service;
+package com.shrajan.order.service;
 
-import com.shrajan.Order.Entity.Order;
-import com.shrajan.Order.Repository.OrderRepository;
+import com.shrajan.order.entity.Order;
+import com.shrajan.order.repository.OrderRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,8 +11,12 @@ import java.util.List;
 
 @Service
 public class OrderService {
-    @Autowired
-    private OrderRepository repo;
+
+    private final OrderRepository repo;
+
+    OrderService(OrderRepository repo) {
+        this.repo = repo;
+    }
 
     private static final Logger logger = LoggerFactory.getLogger(OrderService.class);
 

@@ -1,4 +1,4 @@
-package com.shrajan.Order.Entity;
+package com.shrajan.order.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

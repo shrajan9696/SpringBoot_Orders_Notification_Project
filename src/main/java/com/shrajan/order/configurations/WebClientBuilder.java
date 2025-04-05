@@ -1,4 +1,4 @@
-package com.shrajan.Order.Configurations;
+package com.shrajan.order.configurations;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,6 +1,6 @@
-package com.shrajan.Order.Repository;
+package com.shrajan.order.repository;
 
-import com.shrajan.Order.Entity.Order;
+import com.shrajan.order.entity.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface OrderRepository extends JpaRepository<Order, Integer> {
