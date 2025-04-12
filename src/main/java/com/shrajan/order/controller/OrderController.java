@@ -22,7 +22,6 @@ public class OrderController {
     private final OrderService orderService;
     Logger logger = Logger.getLogger(getClass().getName());
 
-    // in future we will be using Kafka message broker
     public OrderController(WebClient.Builder webClientBuilder, OrderService orderService) {
         this.webClientBuilder = webClientBuilder;
         this.orderService = orderService;
