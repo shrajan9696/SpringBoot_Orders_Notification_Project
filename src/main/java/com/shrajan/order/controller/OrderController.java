@@ -68,11 +68,12 @@ public class OrderController {
 
     @GetMapping("/getAllOrders")
     public ResponseEntity<Object> getAllOrders() {
+         logger.info("get All orders method started");
         try{
             return ResponseEntity.ok(orderService.getAllOrders());
         }
         catch (Exception e){
-            return ResponseEntity.badRequest().body("No orders found");
+            return ResponseEntity.badRequest().body("oops! no orders found ");
         }
     }
 
